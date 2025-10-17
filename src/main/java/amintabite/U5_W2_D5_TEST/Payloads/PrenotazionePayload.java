@@ -18,6 +18,12 @@ public class PrenotazionePayload {
 
     private String noteextra;
 
+    private long dipendenteId;
+
+    private long viaggioId;
+
+
+
     public PrenotazionePayload(LocalDate datarichiesta, String noteextra) {
         this.datarichiesta = datarichiesta;
         this.noteextra = noteextra;
