@@ -19,7 +19,7 @@ public class DipendenteController {
     @GetMapping
     public Page<Dipendente> getDipendenti(
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue ="10" ) int size,
+            @RequestParam(defaultValue ="4" ) int size,
             @RequestParam(defaultValue = "nome") String sortBy)
             {
     return dipendenteService.FindAll(page, size, sortBy);
@@ -34,7 +34,7 @@ public class DipendenteController {
     }
 
 
-        @GetMapping("/{dipendenteid}")
+        @GetMapping("/{iddipendente}")
 
      public Dipendente getDipendenteById(@PathVariable long iddipendente){
                 return dipendenteService.findById(iddipendente);

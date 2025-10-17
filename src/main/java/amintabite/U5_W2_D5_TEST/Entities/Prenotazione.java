@@ -1,9 +1,6 @@
 package amintabite.U5_W2_D5_TEST.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -22,6 +19,14 @@ public class Prenotazione {
     private LocalDate datarichiesta;
 
     private String noteextra;
+
+    @ManyToOne
+    @JoinColumn(name = "dipendente_id")
+    private Dipendente dipendente;
+
+    @ManyToOne
+    @JoinColumn(name = "viaggio_id")
+    private Viaggio viaggio;
 
 
     public Prenotazione( LocalDate datarichiesta, String noteextra) {

@@ -8,7 +8,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -25,7 +24,7 @@ public class Viaggio {
     private String destinazione;
 
     private LocalDate dataviaggio;
-
+    @Enumerated(EnumType.STRING)
     private StatoViaggio statoViaggio;
     @OneToMany
     @JoinColumn(name = "Viaggio_id")
@@ -35,7 +34,7 @@ public class Viaggio {
 
 
 
-    public Viaggio( String destinazione,LocalDate dataviaggio, StatoViaggio statoViaggio) {
+    public Viaggio( String destinazione,LocalDate dataviaggio) {
 
         this.destinazione = destinazione;
         this.dataviaggio = dataviaggio;
