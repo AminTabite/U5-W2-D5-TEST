@@ -77,7 +77,7 @@ public class DipendenteService {
     }
     //cancella dipendente
 
-    public Dipendente findByIdAndDelete(long iddipendente){
+    public void findByIdAndDelete(long iddipendente){
 
         Dipendente found = dipendenteRepository.findById(iddipendente)
                 .orElseThrow(()-> new NotFoundException("eliminazione fallita"));
