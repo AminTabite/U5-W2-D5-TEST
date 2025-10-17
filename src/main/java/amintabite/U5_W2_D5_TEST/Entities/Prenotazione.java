@@ -1,5 +1,6 @@
 package amintabite.U5_W2_D5_TEST.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,7 @@ public class Prenotazione {
 
     @ManyToOne
     @JoinColumn(name = "dipendente_id")
+    @JsonIgnore
     private Dipendente dipendente;
 
     @ManyToOne
