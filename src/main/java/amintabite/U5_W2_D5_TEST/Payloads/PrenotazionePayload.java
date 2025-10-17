@@ -1,5 +1,6 @@
 package amintabite.U5_W2_D5_TEST.Payloads;
 
+import jakarta.validation.constraints.FutureOrPresent;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -12,7 +13,7 @@ import java.time.LocalDate;
 
 public class PrenotazionePayload {
 
-
+@FutureOrPresent(message = " la data deve essere odierna o nel futuro")
     private LocalDate datarichiesta;
 
     private String noteextra;
